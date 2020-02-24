@@ -240,7 +240,7 @@ fi
   fi
   echo "Building package...."
 
-  dpkg-buildpackage -us -uc -j4 >$TEMPDIR/motion_$VERSION-buildlog-$ARCH.txt 2>&1
+  dpkg-buildpackage -us -uc -j4 
 
 ##############################################################################################
 #  7.  Move resulting files to the parent of the original source code directory and clean up
