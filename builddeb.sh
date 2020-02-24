@@ -165,7 +165,7 @@ fi
     cp -R $BASEDIR $TEMPDIR
   else
     cd $TEMPDIR
-    git clone https://github.com/Motion-Project/motion-packaging.git
+    git clone https://github.com/SylvainGarrigues/motion-packaging.git
   fi
 
   cd $TEMPDIR/motion
