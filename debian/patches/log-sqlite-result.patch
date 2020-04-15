@@ -1,0 +1,12 @@
+Log the result of sqlite3_exec to help understand why it is not SQLITE_OK
+--- a/src/event.c
++++ b/src/event.c
+@@ -266,7 +266,7 @@
+         MOTION_LOG(DBG, TYPE_DB, NO_ERRNO, _("Executing sqlite query"));
+         res = sqlite3_exec(cnt->database_sqlite3, sqlquery, NULL, 0, &errmsg);
+         if (res != SQLITE_OK ) {
+-            MOTION_LOG(ERR, TYPE_DB, NO_ERRNO, _("SQLite error was %s"), errmsg);
++            MOTION_LOG(ERR, TYPE_DB, NO_ERRNO, _("SQLite returned result %d - error was %s"), res, errmsg);
+             sqlite3_free(errmsg);
+         }
+         if (save_id) {
